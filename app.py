@@ -21,5 +21,13 @@ def hello():
 def health():
   return {'status': 'healthy', 'version': VERSION}
 
+@app.route('/info')
+def info():
+  return {
+    'app': 'Demo Python App',
+    'version': VERSION,
+    'message': 'CI/CD with GitOps!'
+  }
+
 if __name__ == '__main__':
   app.run(host='0.0.0.0', port=8080)
